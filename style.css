@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+body {
+    color: darksalmon;
+    font-family: "Comic Neue", sans-serif;
+    background-image: url("stars.gif");
+    cursor: url("hello-kitty-default.png"), default;
+}
+
+a {
+    color: red;
+    cursor: url("hello-kitty-help.png"), pointer;
+}
+
+h1, h2, h3, p {
+    cursor: url("hello-kitty-text.png"), text;
+}
+
+header {
+    text-align: center;
+}
+
+header::after{
+    display: inline-block;
+    content: "";
+    width: 350px;
+    height: 2.5rem;
+    background-image: url("fire.gif");
+    background-size: contain;
+}
+
+header > h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    margin-bottom: -1.5rem;
+
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+
+    animation-name: shift-rainbow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes shift-rainbow {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: 100cqw;
+    }
+}
+
+header > h1::before,
+header > h1::after {
+    display: inline-block;
+    content: "";
+    width: 2em;
+    height: 2em;
+    background-image: url("skull.gif");
+    background-size: contain;
+}
+
+header > h2 {
+    margin-bottom: 0;
+}
+
+.summary a::before {
+    content: url("download.gif");
+}
+
+.main {
+    background-image: url("stars-border.png");
+    background-size: 100% 100%;
+    padding: 7rem;
+}
+
+.sidebar > .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.sidebar h3 {
+    text-align: center;
+}
+
+.next {
+    list-style-image: url("click.gif");
+    font-weight: bold;
+}
+
+.sidebar::after {
+    content: url("water-lilies.gif");
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
